@@ -43,11 +43,11 @@
                     <div class="col-lg-6 col-sm-6 col-6 header-top-left">
                         <ul class="list-inline">
                             <li sec:authorize="isAuthenticated()">
-                                <a class="btn btn-outline-danger text-white" href="/logout">Đăng xuất</a>
+                                <a class="btn btn-outline-danger text-white" href="logout">Đăng xuất</a>
                                 <a style="color: snow;">Xin chào, <span style="font-weight: bold"></span></a>
                             </li>
                             <li>
-                                <a class="btn btn-outline-primary text-white" href="/login">Đăng nhập</a>
+                                <a class="btn btn-outline-primary text-white" href="login">Đăng nhập</a>
                                 <a style="color: snow;">Người dùng ẩn danh</span></a>
                             </li>
                         </ul>
@@ -159,8 +159,6 @@
 	@yield('content')
 
 	<script src="{{asset('static/js/home_form.js')}}"></script>
-
-	
 	<script src="{{asset('static/js/vendor/jquery-2.2.4.min.js')}}"></script>
 	<script src="{{asset('static/js/popper.min.js')}}"></script>
 	<script src="{{asset('static/js/vendor/bootstrap.min.js')}}"></script>

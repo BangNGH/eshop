@@ -10,13 +10,15 @@
 								<h3>Đăng nhập</h3>
 								<p>Chào mừng bạn đến với trang đăng nhập.</p>
 							</div>
-							<form action="/login" method="post">
+							@include('alert')
+						
+							<form action="login/store" method="post">
 						
 
 								<div class="form-group position-relative has-icon-left">
 									<label for="username">Email</label>
 									<div class="position-relative">
-										<input type="text" name="username" required class="form-control" id="username">
+										<input type="text" name="email" required class="form-control" id="username">
 										<div class="form-control-icon">
 											<i class="fa-regular fa-user"></i>
 										</div>
@@ -46,11 +48,11 @@
 
 								<div class='form-check clearfix my-4'>
 									<div class="checkbox float-start">
-										<input type="checkbox" id="checkbox1" class='form-check-input' name="remember-me">
+										<input type="checkbox" id="checkbox1" class='form-check-input' name="remember">
 										<label for="checkbox1">Lưu tài khoản</label>
 									</div>
 									<div class="float-end">
-										<a href="/register">Chưa có tài khoản? Đăng ký tại đây</a>
+										<a href="/eshop/public/registry">Chưa có tài khoản? Đăng ký tại đây</a>
 									</div>
 								</div>
 								<div class="clearfix">
@@ -58,6 +60,7 @@
 											class="btn btn-primary float-end">Đăng nhập
 									</button>
 								</div>
+								@csrf
 							</form>
 							<div class="divider">
 								<div class="divider-text">HOẶC</div>
