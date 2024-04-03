@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{asset('static/css/perfect-scrollbar.css')}}">
   <link rel="stylesheet" href="{{asset('static/css/app.css')}}">
   <link rel="shortcut icon" href="{{asset('static/img/favicon.svg')}}">
-  
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <style>
     .activeCurrentPage {
       background-color: #007bff;
@@ -35,42 +35,42 @@
             <ul class="menu">
                 <li class='sidebar-title'>Quản lý dữ liệu</li>
                 <li class="sidebar-item active ">
-                    <a href=" /admin/users " class='sidebar-link'>
+                    <a href="admin/users " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Người dùng</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/cities " class='sidebar-link'>
+                    <a href="/eshop/public/admin/cities " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Thành phố</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/vehicles " class='sidebar-link'>
+                    <a href="admin/vehicles " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Phương tiện</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/seats " class='sidebar-link'>
+                    <a href="admin/seats " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Ghế ngồi</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/routes " class='sidebar-link'>
+                    <a href="admin/routes " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Tuyến đi</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/trips " class='sidebar-link'>
+                    <a href="admin/trips " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Chuyến xe</span>
                     </a>
@@ -78,28 +78,28 @@
 
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/bookings " class='sidebar-link'>
+                    <a href="admin/orders " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Hóa đơn</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/booking-details " class='sidebar-link'>
+                    <a href="admin/orders-details " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Chi tiết hóa đơn</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/seat-reservation " class='sidebar-link'>
+                    <a href="admin/seat-reservation " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Ghế đặt trước</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item active ">
-                    <a href=" /admin/transit " class='sidebar-link'>
+                    <a href="admin/transit " class='sidebar-link'>
                         <i data-feather="home" width="20"></i>
                         <span>Xe trung chuyển</span>
                     </a>
@@ -150,7 +150,7 @@
   </div>
 </div>
 
-
+<script src="{{asset('static/js/ajax/cities.js')}}"></script>
 <script src="{{asset('static/js/perfect-scrollbar.min.js')}}"></script>
 <script src="{{asset('static/js/chart.min.js')}}"></script>
 <script src="{{asset('static/js/apexcharts.min.js')}}"></script>

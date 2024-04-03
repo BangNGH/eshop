@@ -5,7 +5,7 @@
 						<div class="card-body">
 							<div class="text-center mb-5">
 								<a href="/">
-									<img th:src="{{asset('static/img/favicon.svg')}}" height="48" class='mb-4'>
+									<img src="{{asset('static/img/favicon.svg')}}" height="48" class='mb-4'>
 								</a>
 								<h3>Đăng nhập</h3>
 								<p>Chào mừng bạn đến với trang đăng nhập.</p>
