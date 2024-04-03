@@ -1,50 +1,28 @@
-$(document).ready(function () {
-    const searchInput = document.querySelector('#q');
-    searchInput.addEventListener('keyup', (event) => {
-        const q = event.target.value.trim();
+$.ajaxSetup({
+    headers: {
+        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+    },
+});
+function removeRow(id, url) {
+    if (confirm("Bạn có chắc muốn xoá?")) {
         $.ajax({
-            url: '/api/cities/search',
-            type: 'GET',
-            data: { q: q },
-            success: (data) => {
-
-                const usersTableBody = document.querySelector('tbody');
-                usersTableBody.innerHTML = ''; // Clear current table body
-
-                if (data.length > 0) {
-                    // Loop through the search results and add each user to the table
-                    data.forEach((city) => {
-                        const userRow = `
-      <tr>
-       <td>${city.id}</td>
-       <td>${city.name}</td>
-                              <td>
-                            <img alt="hình tuyến đi" style="max-width: 100%; max-height: 170px;" src="${city.cityImagePath}">
-                        </td>
-        <td>
-          <a href="/admin/cities/edit/${city.id}">Sửa</a> |
-          <a href="/admin/cities/delete/${city.id}" class="text-danger" onclick="return confirm('Bạn có chắc muốn xóa chứ?')">Xóa</a>
-        </td>
-      </tr>
-    `;
-                        usersTableBody.innerHTML += userRow;
-                    });
-                } else {
-                    // If there are no search results, display a message
-                    const noResultsRow = `
-    <tr>
-      <td colspan="8" class="text-center">Không tìm thấy kết quả.</td>
-    </tr>
-  `;
-                    usersTableBody.innerHTML = noResultsRow;
+            url: url,
+            type: 'DELETE',
+            dataType: 'json',
+            data:{id},
+            success: function (result) {
+                console.log(result);
+                if(result.error===false){
+                    alert(result.message);
+                    location.reload();
+                }else{
+                    alert('Có lỗi xảy ra vui lòng thử lại.');
                 }
-
             },
-            error: (error) => {
-                alert(q+" search fail "+error)
-                console.log(error);
+            error: function (xhr, textStatus, errorThrown) {
+                console.log('Error in Operation');
             }
         });
-    });
+    }
+}
 
-});

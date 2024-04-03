@@ -1,4 +1,4 @@
-@extends('hlayout')
+@extends('/client/hlayout')
 @section('content')
 <!-- Start popular-destination Area -->
 <section class="popular-destination-area section-gap">
@@ -127,7 +127,4 @@
 		</div>
 	</div>
 </section>
-
-
-
 @endsection

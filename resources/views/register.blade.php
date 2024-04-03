@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="/login">Bạn đã có tài khoản? Đăng nhập.</a>
+                <a href="/eshop/public/login">Bạn đã có tài khoản? Đăng nhập.</a>
                 <div class="clearfix">
                     <button
                         style="float: right; width: 100%; margin-top: 10px"
